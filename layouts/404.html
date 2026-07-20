@@ -1,0 +1,15 @@
+{{ define "main" }}
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">404</p>
+    <h1 class="page-title">Page Not Found</h1>
+  </div>
+</section>
+
+<section class="page-body">
+  <div class="wrap prose">
+    <p>Sorry, the page you were looking for doesn't exist. It may have been moved or the link may be incorrect.</p>
+    <p><a href="{{ "/" | relURL }}">← Back to the homepage</a></p>
+  </div>
+</section>
+{{ end }}

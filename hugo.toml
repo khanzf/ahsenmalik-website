@@ -1,0 +1,53 @@
+baseURL = "https://example.org/"
+languageCode = "en-us"
+title = "NoVA Turnout"
+
+# Disable Hugo's tagline in <title> if you prefer; left on for clarity.
+enableEmoji = true
+
+# A PAC brochure site doesn't need tag/category archive pages.
+disableKinds = ["taxonomy", "term"]
+
+# ---------------------------------------------------------------------------
+# Site-wide parameters. Edit these to change footer info, the disclaimer that
+# Virginia law requires on PAC materials, and contact details — no template
+# editing required.
+# ---------------------------------------------------------------------------
+[params]
+  description = "A Northern Virginia political action committee focused on getting voters to the polls."
+  # Required Virginia PAC advertisement disclaimer. Update if your committee
+  # registers a different sponsor name or becomes candidate-authorized.
+  disclaimer = "Paid for by NoVA Turnout. Not authorized by a candidate or candidate's committee."
+  email = "info@novaturnout.org"
+  # Optional social links — leave blank to hide.
+  twitter = ""
+  facebook = ""
+  instagram = ""
+
+# ---------------------------------------------------------------------------
+# Main navigation. Add, remove, or reorder pages here (lower weight = first).
+# ---------------------------------------------------------------------------
+[menus]
+  [[menus.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 10
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 20
+  [[menus.main]]
+    name = "Get Involved"
+    pageRef = "/get-involved"
+    weight = 30
+  [[menus.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 40
+  [[menus.main]]
+    name = "Sign up for Calendar Reminders"
+    pageRef = "/calendar-reminders"
+    weight = 50
+
+[markup.goldmark.renderer]
+  unsafe = true  # allow raw HTML in markdown content files

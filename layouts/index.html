@@ -1,0 +1,150 @@
+{{ define "main" }}
+<section class="hero-carousel" aria-roledescription="carousel" aria-label="NoVA Turnout highlights">
+  <div class="carousel-track" id="carousel-track">
+
+    {{/* Slide 1 – Register */}}
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+      <div class="slide-text">
+        <p class="eyebrow">Step 1 · Registration</p>
+        <h2 class="slide-heading">Your vote starts with registration.</h2>
+        <p class="slide-body">Before you can cast a ballot in Virginia, you need to be on the rolls. Registration is quick — and once you're in, you're set for every election in your county. Deadlines apply, so don't wait. Check your current status, update your address if you've moved, or sign up for the first time. We offer same-day help at community events across Fairfax, Loudoun, and Prince William counties.</p>
+        <div><a class="btn btn-primary" href="/register/">Register to vote</a></div>
+      </div>
+      <div class="slide-visual" aria-hidden="true">
+        <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="45" y="55" width="115" height="145" rx="5" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+          <rect x="78" y="44" width="50" height="22" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <circle cx="103" cy="55" r="4" fill="rgba(255,255,255,0.1)"/>
+          <polyline points="68,115 90,137 137,90" stroke="#F2A900" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="68" y="152" width="68" height="7" rx="3.5" fill="rgba(255,255,255,0.18)"/>
+          <rect x="68" y="167" width="48" height="7" rx="3.5" fill="rgba(255,255,255,0.12)"/>
+        </svg>
+      </div>
+    </div>
+
+    {{/* Slide 2 – Plan */}}
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+      <div class="slide-text">
+        <p class="eyebrow">Step 2 · Your voting plan</p>
+        <h2 class="slide-heading">Know before you go.</h2>
+        <p class="slide-body">Virginia gives you three ways to vote: on Election Day at your assigned polling place, early in person starting 45 days before the election, or by mail with an absentee ballot — no excuse required. Finding your polling place and confirming your hours takes five minutes. Those five minutes are the difference between a vote cast and a vote lost. We'll walk you through every option.</p>
+        <div><a class="btn btn-primary" href="/plan/">Make your plan</a></div>
+      </div>
+      <div class="slide-visual" aria-hidden="true">
+        <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="28" y="58" width="146" height="130" rx="5" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+          <rect x="28" y="58" width="146" height="37" rx="5" fill="#F2A900" opacity="0.85"/>
+          <line x1="72" y1="44" x2="72" y2="72" stroke="rgba(255,255,255,0.45)" stroke-width="4" stroke-linecap="round"/>
+          <line x1="130" y1="44" x2="130" y2="72" stroke="rgba(255,255,255,0.45)" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="62" cy="120" r="6" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="101" cy="120" r="6" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="140" cy="120" r="6" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="62" cy="157" r="6" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="101" cy="157" r="8" fill="#F2A900"/>
+          <circle cx="140" cy="157" r="6" fill="rgba(255,255,255,0.25)"/>
+        </svg>
+      </div>
+    </div>
+
+    {{/* Slide 3 – Turn Out */}}
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+      <div class="slide-text">
+        <p class="eyebrow">Step 3 · Show up</p>
+        <h2 class="slide-heading">Every election is decided by who shows up.</h2>
+        <p class="slide-body">Local races in Northern Virginia are regularly decided by a few hundred votes — sometimes fewer. When neighbors show up together, the math changes. We send reminders before every federal, state, and local election, arrange rides for those who need them, and keep a network of volunteers ready so that a busy week never costs anyone their ballot.</p>
+        <div><a class="btn btn-primary" href="/get-involved/">Get involved</a></div>
+      </div>
+      <div class="slide-visual" aria-hidden="true">
+        <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="58" cy="82" r="20" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+          <path d="M22 172 Q22 136 58 136 Q94 136 94 172" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+          <circle cx="100" cy="72" r="26" fill="#F2A900" opacity="0.88"/>
+          <path d="M60 174 Q60 130 100 130 Q140 130 140 174" fill="#F2A900" opacity="0.88"/>
+          <circle cx="142" cy="82" r="20" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+          <path d="M106 172 Q106 136 142 136 Q178 136 178 172" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="carousel-controls" role="group" aria-label="Carousel navigation">
+    <button class="carousel-dot is-active" aria-label="Slide 1 of 3" aria-pressed="true" data-index="0"></button>
+    <button class="carousel-dot" aria-label="Slide 2 of 3" aria-pressed="false" data-index="1"></button>
+    <button class="carousel-dot" aria-label="Slide 3 of 3" aria-pressed="false" data-index="2"></button>
+  </div>
+</section>
+
+{{ with .Params.pillars }}
+<section class="pillars">
+  <div class="wrap pillars-grid">
+    {{ range $i, $p := . }}
+    {{ if $p.link }}
+    <a class="pillar pillar-link" href="{{ $p.link }}">
+      <span class="pillar-num">{{ printf "%02d" (add $i 1) }}</span>
+      <h2 class="pillar-title">{{ $p.title }}</h2>
+      <p class="pillar-body">{{ $p.body }}</p>
+    </a>
+    {{ else }}
+    <article class="pillar">
+      <span class="pillar-num">{{ printf "%02d" (add $i 1) }}</span>
+      <h2 class="pillar-title">{{ $p.title }}</h2>
+      <p class="pillar-body">{{ $p.body }}</p>
+    </article>
+    {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<section class="intro">
+  <div class="wrap intro-inner prose">
+    {{ .Content }}
+  </div>
+</section>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+(function () {
+  var track  = document.getElementById('carousel-track');
+  var dots   = document.querySelectorAll('.carousel-dot');
+  if (!track || !dots.length) return;
+
+  var total   = dots.length;
+  var current = 0;
+  var timer   = null;
+  var DELAY   = 5000;
+
+  function goTo(n) {
+    current = ((n % total) + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function (d, i) {
+      d.classList.toggle('is-active', i === current);
+      d.setAttribute('aria-pressed', i === current ? 'true' : 'false');
+    });
+  }
+
+  function start() {
+    clearInterval(timer);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    timer = setInterval(function () { goTo(current + 1); }, DELAY);
+  }
+
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+      goTo(parseInt(this.dataset.index, 10));
+      start();
+    });
+  });
+
+  var section = document.querySelector('.hero-carousel');
+  if (section) {
+    section.addEventListener('mouseenter', function () { clearInterval(timer); });
+    section.addEventListener('mouseleave', start);
+  }
+
+  start();
+}());
+</script>
+{{ end }}
