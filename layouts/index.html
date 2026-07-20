@@ -1,14 +1,32 @@
 {{ define "main" }}
-<section class="hero-carousel" aria-roledescription="carousel" aria-label="NoVA Turnout highlights">
+<section class="hero-carousel" aria-roledescription="carousel" aria-label="Ahsen Malik for Congress highlights">
   <div class="carousel-track" id="carousel-track">
 
-    {{/* Slide 1 – Register */}}
+    {{/* Slide 1 – Campaign video + Right for Virginia's Tenth */}}
     <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
       <div class="slide-text">
-        <p class="eyebrow">Step 1 · Registration</p>
-        <h2 class="slide-heading">Your vote starts with registration.</h2>
-        <p class="slide-body">Before you can cast a ballot in Virginia, you need to be on the rolls. Registration is quick — and once you're in, you're set for every election in your county. Deadlines apply, so don't wait. Check your current status, update your address if you've moved, or sign up for the first time. We offer same-day help at community events across Fairfax, Loudoun, and Prince William counties.</p>
-        <div><a class="btn btn-primary" href="/register/">Register to vote</a></div>
+        <p class="eyebrow">Meet Ahsen</p>
+        <h2 class="slide-heading">Watch the campaign video.</h2>
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/0gz4pkQ_Nz4" title="Ahsen Malik for Congress campaign video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="slide-visual slide-visual--banner">
+        <a class="right-banner" href="/issues/iran-and-israel/" aria-label="Right for Virginia's Tenth — read Ahsen's position on Iran and Israel">
+          <span class="right-banner__row right-banner__row--red">Right on Trump</span>
+          <span class="right-banner__row right-banner__row--green">Right on Iran</span>
+          <span class="right-banner__row right-banner__row--purple">Right for Virginia's Tenth</span>
+        </a>
+      </div>
+    </div>
+
+    {{/* Slide 2 – About Ahsen */}}
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+      <div class="slide-text">
+        <p class="eyebrow">About Ahsen</p>
+        <h2 class="slide-heading">A teacher, a father, a fresh voice for VA-10.</h2>
+        <p class="slide-body">As the son of an immigrant, a father of two, and a middle school teacher, Ahsen brings a fresh, balanced perspective to a Congress with a 10% approval rating. In times like these, being an outsider isn't a weakness — it's exactly what's missing.</p>
+        <div><a class="btn btn-primary" href="/about/">Read Ahsen's story</a></div>
       </div>
       <div class="slide-visual" aria-hidden="true">
         <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,37 +40,13 @@
       </div>
     </div>
 
-    {{/* Slide 2 – Plan */}}
-    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
-      <div class="slide-text">
-        <p class="eyebrow">Step 2 · Your voting plan</p>
-        <h2 class="slide-heading">Know before you go.</h2>
-        <p class="slide-body">Virginia gives you three ways to vote: on Election Day at your assigned polling place, early in person starting 45 days before the election, or by mail with an absentee ballot — no excuse required. Finding your polling place and confirming your hours takes five minutes. Those five minutes are the difference between a vote cast and a vote lost. We'll walk you through every option.</p>
-        <div><a class="btn btn-primary" href="/plan/">Make your plan</a></div>
-      </div>
-      <div class="slide-visual" aria-hidden="true">
-        <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="28" y="58" width="146" height="130" rx="5" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
-          <rect x="28" y="58" width="146" height="37" rx="5" fill="#F2A900" opacity="0.85"/>
-          <line x1="72" y1="44" x2="72" y2="72" stroke="rgba(255,255,255,0.45)" stroke-width="4" stroke-linecap="round"/>
-          <line x1="130" y1="44" x2="130" y2="72" stroke="rgba(255,255,255,0.45)" stroke-width="4" stroke-linecap="round"/>
-          <circle cx="62" cy="120" r="6" fill="rgba(255,255,255,0.25)"/>
-          <circle cx="101" cy="120" r="6" fill="rgba(255,255,255,0.25)"/>
-          <circle cx="140" cy="120" r="6" fill="rgba(255,255,255,0.25)"/>
-          <circle cx="62" cy="157" r="6" fill="rgba(255,255,255,0.25)"/>
-          <circle cx="101" cy="157" r="8" fill="#F2A900"/>
-          <circle cx="140" cy="157" r="6" fill="rgba(255,255,255,0.25)"/>
-        </svg>
-      </div>
-    </div>
-
-    {{/* Slide 3 – Turn Out */}}
+    {{/* Slide 3 – Issues */}}
     <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
       <div class="slide-text">
-        <p class="eyebrow">Step 3 · Show up</p>
-        <h2 class="slide-heading">Every election is decided by who shows up.</h2>
-        <p class="slide-body">Local races in Northern Virginia are regularly decided by a few hundred votes — sometimes fewer. When neighbors show up together, the math changes. We send reminders before every federal, state, and local election, arrange rides for those who need them, and keep a network of volunteers ready so that a busy week never costs anyone their ballot.</p>
-        <div><a class="btn btn-primary" href="/get-involved/">Get involved</a></div>
+        <p class="eyebrow">Where Ahsen Stands</p>
+        <h2 class="slide-heading">Bold compromises, not partisan talking points.</h2>
+        <p class="slide-body">From abortion to climate policy, Ahsen is building durable, bipartisan solutions that most Americans in the middle can actually live with — because Virginia's 10th deserves better than a political football.</p>
+        <div><a class="btn btn-primary" href="/issues/">See all issues</a></div>
       </div>
       <div class="slide-visual" aria-hidden="true">
         <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,6 +94,19 @@
 <section class="intro">
   <div class="wrap intro-inner prose">
     {{ .Content }}
+  </div>
+</section>
+
+<section class="district-check">
+  <div class="wrap district-check-inner">
+    <div class="district-check__media" aria-hidden="true">
+      <span class="district-check__num">10</span>
+    </div>
+    <div class="district-check__panel">
+      <h2>Congressional District 10</h2>
+      <p>Do you live in Congressional District 10?</p>
+      <p>You can reference the map of the district or click <a href="https://vote.elections.virginia.gov/VoterInformation/Lookup/polling">here</a> to find your precinct to vote!</p>
+    </div>
   </div>
 </section>
 {{ end }}

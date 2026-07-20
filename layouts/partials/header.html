@@ -1,12 +1,8 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="{{ "/" | relURL }}">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 13l5 5L20 6"/>
-        </svg>
-      </span>
-      <span class="brand-text">NoVA&nbsp;Turnout</span>
+      <span class="brand-mark" aria-hidden="true">AM</span>
+      <span class="brand-text">Ahsen&nbsp;Malik</span>
     </a>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
@@ -17,7 +13,18 @@
     <nav class="site-nav" aria-label="Main">
       {{ range .Site.Menus.main }}
         {{ $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
+        {{ if .Children }}
+        <div class="nav-item has-dropdown">
+          <a href="{{ .URL }}" class="{{ if $active }}is-active{{ end }}">{{ .Name }}</a>
+          <div class="dropdown-menu">
+            {{ range .Children }}
+            <a href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ else }}
         <a href="{{ .URL }}" class="{{ if $active }}is-active{{ end }}">{{ .Name }}</a>
+        {{ end }}
       {{ end }}
     </nav>
   </div>

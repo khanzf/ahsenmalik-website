@@ -1,32 +1,29 @@
 ---
-title: "About"
-description: "Who we are and how NoVA Turnout works."
+title: "About Ahsen"
+description: "Who Ahsen Malik is and why he's running for Congress in Virginia's 10th District."
 ---
 
-## What we do
+As the son of an immigrant, the father of two children, and a middle school
+teacher to our next generation, I am both nervous and optimistic about the
+future trajectory of our nation. One of my strengths is to approach
+challenges with a balanced perspective. My professional background in
+education, residential mortgage finance, and realty — while atypical for
+those entering the House of Representatives — provides me with a fresh and
+valuable viewpoint. In these unique times, with Congress holding a 10%
+approval rating, I believe that being an outsider is a strength, not a
+weakness.
 
-NoVA Turnout is a Virginia political action committee focused on a single,
-unglamorous goal: getting more eligible voters in Northern Virginia to actually
-vote. We don't run candidates and we don't write policy. We run the logistics of
-participation — registration drives, polling-place reminders, and community
-outreach.
+If elected, I am committed to bringing a forward-thinking perspective to the
+table and to working tirelessly to address the needs and concerns of our
+nation and district. I will focus on practical solutions to improve the
+lives of our constituents, drawing from my professional experience to offer
+innovative approaches. My goal is to foster a collaborative environment
+where all voices are heard, and together, we can make meaningful progress.
 
-## Why turnout
+> John F. Kennedy once said, "Ask not what your country can do for you, ask
+> what you can do for your country."
 
-Local and state elections are routinely decided by a handful of votes per
-precinct, yet they're the races that shape schools, transit, and taxes most
-directly. When turnout goes up, representation gets more honest. That's the
-entire thesis.
-
-## How we're organized
-
-We're registered with the Virginia Department of Elections and report every
-contribution and expenditure on the schedule the Commonwealth requires. Our
-books are open, our disclaimers are on every ad, and our treasurer is happy to
-answer questions.
-
-## The people
-
-We're teachers, retirees, students, and parents who got tired of low-turnout
-elections deciding things for everyone else. There's a place for you here —
-see [Get Involved](/get-involved/).
+We all have unique strengths and talents, and each of us has a role in
+contributing to the betterment of our nation. Running this campaign and
+offering myself as a candidate for the citizens of VA District #10 is my way
+of serving. Thank you for your consideration.

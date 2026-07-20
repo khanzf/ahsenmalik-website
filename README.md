@@ -1,9 +1,10 @@
-# NoVA Turnout — website
+# Ahsen Malik for Congress — website
 
-A static website for the **NoVA Turnout** political action committee, built with
-[Hugo](https://gohugo.io/). Everything lives in this repository, so you can host
-it anywhere that serves static files (GitHub Pages, Netlify, Cloudflare Pages, an
-S3 bucket, etc.) and move it later without rewriting anything.
+A static campaign website for **Ahsen Malik for Congress** (Virginia's 10th
+District), built with [Hugo](https://gohugo.io/). Everything lives in this
+repository, so you can host it anywhere that serves static files (GitHub
+Pages, Netlify, Cloudflare Pages, an S3 bucket, etc.) and move it later
+without rewriting anything.
 
 No database, no server, no build dependencies beyond Hugo itself.
 
@@ -16,11 +17,12 @@ No database, no server, no build dependencies beyond Hugo itself.
 3. [The 5-minute mental model](#3-the-5-minute-mental-model)
 4. [Updating the front page](#4-updating-the-front-page)
 5. [Editing the other pages](#5-editing-the-other-pages)
-6. [Adding a brand-new page](#6-adding-a-brand-new-page)
+6. [Adding a new Issues page](#6-adding-a-new-issues-page)
 7. [Changing the menu, footer, and disclaimer](#7-changing-the-menu-footer-and-disclaimer)
 8. [Building for production](#8-building-for-production)
 9. [Hosting on GitHub Pages](#9-hosting-on-github-pages)
 10. [Folder reference](#10-folder-reference)
+11. [Known gaps to close before launch](#11-known-gaps-to-close-before-launch)
 
 ---
 
@@ -61,7 +63,7 @@ Three kinds of files matter to you:
 | You want to change…                | Edit a file in… |
 | ---------------------------------- | --------------- |
 | **Words on a page**                | `content/`      |
-| **Menu, footer, email, disclaimer**| `hugo.toml`     |
+| **Menu, footer, disclaimer**       | `hugo.toml`     |
 | **Look / layout / colors**         | `layouts/` and `static/css/style.css` |
 
 Most updates are just editing text in `content/` — you'll rarely touch anything
@@ -70,39 +72,24 @@ else.
 Each file in `content/` starts with a block fenced by `---`. That block is called
 **front matter** and holds settings (like the page title). The text *below* the
 closing `---` is the page body, written in **Markdown** (plain text with simple
-formatting: `## Heading`, `**bold**`, `- bullet`, `[link](/about/)`).
+formatting: `## Heading`, `**bold**`, `- bullet`, `[link](/about/)`). Raw HTML
+is also allowed in the body (used for the video embed, the campaign banner, and
+the Contact/Get Involved forms).
 
 ---
 
 ## 4. Updating the front page
 
-The homepage is special: it's driven almost entirely by front matter so you can
-change the headline and stats without touching any HTML. Open:
+Open `content/_index.md`. The **`pillars`** front matter list drives the
+three focus cards below the hero carousel (Issues / Get Involved / Donate) —
+add, remove, or relink them freely. The paragraph below the closing `---` is
+the intro copy above the "Congressional District 10" panel.
 
-```
-content/_index.md
-```
-
-You'll find clearly labelled fields. The ones you'll touch most:
-
-```yaml
-headline: "Every election is decided by who shows up."
-subhead:  "NoVA Turnout helps neighbors..."
-
-# The turnout meter — update these two numbers after each push:
-meter_label:   "Pledged voters this cycle"
-meter_current: 6200
-meter_goal:    10000
-```
-
-- **`meter_current` / `meter_goal`** drive the gold progress bar. The percentage
-  fills in automatically. After a registration push, bump `meter_current`.
-- **`pillars`** is the list of three cards ("Register / Plan / Turn out"). Add or
-  remove items and the layout adjusts.
-- The paragraphs **below** the closing `---` are the intro copy at the bottom of
-  the page. Edit them like any document.
-
-Save, and the local preview updates instantly.
+The three hero carousel slides (campaign video + "Right for Virginia's
+Tenth" banner, About Ahsen teaser, Issues teaser) and the purple
+"Congressional District 10" panel are hand-built in `layouts/index.html`
+because they mix video, images, and links — edit that file directly to
+change their text or targets.
 
 ---
 
@@ -110,11 +97,13 @@ Save, and the local preview updates instantly.
 
 Each sub-page is one Markdown file:
 
-| Page         | File                       |
-| ------------ | -------------------------- |
-| About        | `content/about.md`         |
-| Get Involved | `content/get-involved.md`  |
-| Contact      | `content/contact.md`       |
+| Page             | File                          |
+| ---------------- | ------------------------------ |
+| About Ahsen      | `content/about.md`             |
+| Issues (hub)     | `content/issues/_index.md`     |
+| Get Involved     | `content/get-involved.md`      |
+| Contact          | `content/contact.md`           |
+| Donate           | `content/donate.md`            |
 
 Open the file, edit the text under the front matter, and save. Markdown quick
 reference:
@@ -128,21 +117,27 @@ A normal paragraph with **bold** and a [link to another page](/contact/).
 - another bullet
 
 > A highlighted callout box.
+
+| Column A | Column B |
+| --- | --- |
+| Cell | Cell |
 ```
 
 ---
 
-## 6. Adding a brand-new page
+## 6. Adding a new Issues page
 
-From the project folder:
+Issue positions live in `content/issues/` and appear both on the `/issues/`
+hub page and as a dropdown under **Issues** in the top nav. To add one:
 
-```bash
-hugo new content endorsements.md
-```
+1. Create `content/issues/your-issue.md` with `title` and `description`
+   front matter, then the position below the `---`.
+2. Add a matching entry to `[menus]` in `hugo.toml` with
+   `parent = "Issues"` (copy an existing issue entry and adjust `name`,
+   `pageRef`, and `weight`).
 
-This creates `content/endorsements.md` from the template in `archetypes/`. Edit
-its text, then add it to the menu (see next section). The page will live at
-`/endorsements/`.
+The `/issues/` hub page lists every page under `content/issues/`
+automatically — no extra step needed there.
 
 ---
 
@@ -150,30 +145,23 @@ its text, then add it to the menu (see next section). The page will live at
 
 All of this is in **`hugo.toml`**.
 
-**Menu** — under `[menus]`. Each entry is a link in the top nav. Lower `weight`
-appears first:
+**Menu** — under `[menus]`. Each entry is a link in the top nav. Lower
+`weight` appears first. Entries with `parent = "Issues"` render as a
+dropdown under the Issues link instead of their own top-level item.
 
-```toml
-[[menus.main]]
-  name = "Endorsements"
-  pageRef = "/endorsements"
-  weight = 35
-```
-
-**Footer details, email, social links, and the legal disclaimer** — under
-`[params]`:
+**Footer details and the legal disclaimer** — under `[params]`:
 
 ```toml
 [params]
-  email = "info@novaturnout.org"
-  disclaimer = "Paid for by NoVA Turnout. Not authorized by a candidate or candidate's committee."
-  twitter = ""   # leave blank to hide the link
+  description = "…tagline shown under the footer heading…"
+  disclaimer = "Paid for by Ahsen for Virginia."
 ```
 
-> **Important:** Virginia law requires a "Paid for by…" disclaimer on PAC
-> materials, including websites. The `disclaimer` value is printed in the footer
-> of every page. If your committee becomes candidate-authorized or changes its
-> registered name, update this one line and it changes everywhere.
+> **Important:** Federal candidate committees are required to include a
+> "Paid for by…" disclaimer on campaign materials, including websites. The
+> `disclaimer` value is printed in the footer of every page. If the
+> committee's registered name changes, update this one line and it changes
+> everywhere.
 
 ---
 
@@ -208,7 +196,7 @@ running `hugo`.
 Set your real domain in `hugo.toml`:
 
 ```toml
-baseURL = "https://www.novaturnout.org/"
+baseURL = "https://www.ahsenforvirginia.com/"
 ```
 
 ---
@@ -216,36 +204,61 @@ baseURL = "https://www.novaturnout.org/"
 ## 10. Folder reference
 
 ```
-nova-turnout/
-├── hugo.toml              ← site settings: menu, footer, disclaimer, email
-├── README.md              ← this file
+ahsenmalik-website/
+├── hugo.toml               ← site settings: menu, footer, disclaimer
+├── README.md                ← this file
 ├── archetypes/
-│   └── default.md         ← template used by `hugo new`
-├── content/               ← YOUR WORDS LIVE HERE
-│   ├── _index.md          ← the front page (hero, meter, pillars, intro)
+│   └── default.md           ← template used by `hugo new`
+├── content/                 ← YOUR WORDS LIVE HERE
+│   ├── _index.md             ← the front page (pillars + intro copy)
 │   ├── about.md
 │   ├── get-involved.md
-│   └── contact.md
-├── layouts/               ← HTML templates (rarely need editing)
-│   ├── index.html         ← homepage layout
+│   ├── contact.md
+│   ├── donate.md
+│   └── issues/
+│       ├── _index.md         ← the Issues hub page
+│       ├── abortion.md
+│       ├── climate.md
+│       ├── data-centers.md
+│       ├── inflation.md
+│       ├── iran-and-israel.md
+│       ├── health-security.md
+│       └── election-reform.md
+├── layouts/                  ← HTML templates (rarely need editing)
+│   ├── index.html            ← homepage layout (carousel + pillars + district panel)
+│   ├── 404.html
 │   ├── _default/
-│   │   ├── baseof.html    ← page shell (header + footer wrapper)
-│   │   ├── single.html    ← layout for sub-pages
-│   │   └── list.html
+│   │   ├── baseof.html       ← page shell (header + footer wrapper)
+│   │   ├── single.html       ← layout for sub-pages
+│   │   └── list.html         ← layout for the Issues hub
 │   └── partials/
 │       ├── head.html
-│       ├── header.html    ← logo + top navigation
-│       └── footer.html    ← footer + required disclaimer
+│       ├── header.html       ← logo + top navigation (incl. Issues dropdown)
+│       └── footer.html       ← footer + required disclaimer
 └── static/
     └── css/
-        └── style.css      ← all colors, fonts, and layout
+        └── style.css         ← all colors, fonts, and layout
 ```
 
 ---
 
-### A note on campaign-finance compliance
+## 11. Known gaps to close before launch
 
-This site ships with the required Virginia PAC disclaimer in the footer and a
-contributor-information note on the *Get Involved* page. It is a starting point,
-not legal advice — confirm your specific disclaimer wording and reporting
-obligations with your treasurer or the Virginia Department of Elections.
+This template implements the content and structure requested, but a few
+pieces depend on accounts or services only the campaign can set up:
+
+- **Contact form** (`content/contact.md`) has no backend yet — submitting it
+  currently just reloads the page. Wire it to a form service (Formspree,
+  Netlify Forms, a Google Form, etc.) or a custom endpoint before launch.
+- **Get Involved** embeds the Google Form exactly as provided. Renaming
+  "Volunteer Summer Fellowship" to "Volunteer," allowing multi-select,
+  removing the car/laptop/start-date questions, and adding the resume note
+  all need to be done inside the Google Forms editor — that's outside this
+  repository.
+- **Donate** (`content/donate.md`) is intentionally left as a placeholder for
+  the campaign's donation processor.
+- The homepage's "Right for Virginia's Tenth" banner and the "Congressional
+  District 10" panel are built with CSS/HTML rather than the original
+  graphic files, since those image files weren't available in this
+  repository — swap in real brand assets any time by editing
+  `layouts/index.html` and `static/css/style.css`.

@@ -1,7 +1,7 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div class="footer-brand">
-      <span class="brand-text">NoVA Turnout</span>
+      <span class="brand-text">A Uniter, Not a Divider.</span>
       <p class="footer-tag">{{ .Site.Params.description }}</p>
     </div>
 
@@ -11,20 +11,10 @@
         <a href="{{ .URL }}">{{ .Name }}</a>
       {{ end }}
     </nav>
-
-    <div class="footer-contact">
-      <h2 class="footer-heading">Reach us</h2>
-      {{ with .Site.Params.email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
-      <div class="footer-social">
-        {{ with .Site.Params.twitter }}<a href="{{ . }}">Twitter</a>{{ end }}
-        {{ with .Site.Params.facebook }}<a href="{{ . }}">Facebook</a>{{ end }}
-        {{ with .Site.Params.instagram }}<a href="{{ . }}">Instagram</a>{{ end }}
-      </div>
-    </div>
   </div>
 
   <div class="wrap footer-legal">
     <p class="disclaimer">{{ .Site.Params.disclaimer }}</p>
-    <p class="copyright">&copy; {{ now.Year }} NoVA Turnout. All rights reserved.</p>
+    <p class="copyright">&copy; {{ now.Year }} Ahsen for Virginia. All rights reserved.</p>
   </div>
 </footer>
