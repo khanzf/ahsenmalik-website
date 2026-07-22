@@ -3,7 +3,7 @@ title: "Contact"
 description: "Reach the Ahsen Malik for Congress campaign."
 ---
 
-<p class="contact-intro">Questions, volunteer sign-ups, and press inquiries all go to the same place. Fill out the form below and we'll get back to you.</p>
+<p class="contact-intro">General questions and press inquiries all go to the same place. Fill out the form below and we'll get back to you.</p>
 
 <form class="contact-form">
 

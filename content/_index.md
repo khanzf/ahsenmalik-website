@@ -22,7 +22,7 @@ pillars:
     link: "/donate/"
 ---
 
-In 2022 congressional midterms, only 296,580 of the approximately 535,000
+In the 2022 congressional midterms, only 296,580 of the approximately 535,000
 registered voters in Virginia's 10th congressional district showed up to
 vote. The votes are there for an Independent to win a congressional seat,
 you just have to show up…
